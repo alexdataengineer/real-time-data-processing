@@ -1,47 +1,6 @@
 # Citi Bike NYC Real-Time Data Pipeline & Dashboard
 
 
-
-## Architecture
-
-```mermaid
-graph TD
-    A[Citi Bike NYC API] --> B[Python Ingestion Script]
-    B --> C[Azure Event Hub]
-    C --> D[Streamlit Dashboard]
-    C --> E[Other Consumers (optional)]
-    C --> F[Azure Monitoring & Metrics]
-    
-    subgraph "Data Sources"
-        A1[Station Information API]
-        A2[Station Status API]
-    end
-    
-    subgraph "Data Processing"
-        B1[Data Fetching]
-        B2[JSON Processing]
-        B3[Event Batching]
-    end
-    
-    subgraph "Streaming Platform"
-        C1[Event Hub Partitions]
-        C2[Consumer Groups]
-        C3[Message Routing]
-    end
-    
-    subgraph "Visualization"
-        D1[Real-time Charts]
-        D2[Interactive Maps]
-        D3[Auto-refresh Dashboard]
-    end
-    
-    subgraph "Monitoring"
-        F1[Throughput Metrics]
-        F2[Error Tracking]
-        F3[Performance Analytics]
-    end
-```
-
 ### **System Components:**
 
 #### **1. Data Sources**
