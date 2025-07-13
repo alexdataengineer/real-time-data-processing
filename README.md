@@ -119,6 +119,7 @@ Station Data      →   JSON Events  →  Partitions    →  Real-time Viz
 
 ---
 
+
 ## 1. Overview
 
 This project implements a real-time data ingestion and visualization pipeline for Citi Bike NYC station data. It continuously ingests live station information and status, streams the data through Azure Event Hub, and visualizes it in real time using a custom Streamlit dashboard. The solution enables instant monitoring and analysis of bike station availability and operational KPIs.
