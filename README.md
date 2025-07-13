@@ -37,13 +37,85 @@ graph TD
     C --> D[Streamlit Dashboard]
     C --> E[Other Consumers (optional)]
     C --> F[Azure Monitoring & Metrics]
+    
+    subgraph "Data Sources"
+        A1[Station Information API]
+        A2[Station Status API]
+    end
+    
+    subgraph "Data Processing"
+        B1[Data Fetching]
+        B2[JSON Processing]
+        B3[Event Batching]
+    end
+    
+    subgraph "Streaming Platform"
+        C1[Event Hub Partitions]
+        C2[Consumer Groups]
+        C3[Message Routing]
+    end
+    
+    subgraph "Visualization"
+        D1[Real-time Charts]
+        D2[Interactive Maps]
+        D3[Auto-refresh Dashboard]
+    end
+    
+    subgraph "Monitoring"
+        F1[Throughput Metrics]
+        F2[Error Tracking]
+        F3[Performance Analytics]
+    end
 ```
 
-- **Citi Bike NYC API:** Provides real-time station data.
-- **Python Ingestion Script:** Fetches and sends data to Azure Event Hub.
-- **Azure Event Hub:** Scalable, partitioned event streaming platform.
-- **Streamlit Dashboard:** Visualizes live data for real-time monitoring.
-- **Azure Monitoring:** Tracks system health and throughput.
+### **System Components:**
+
+#### **1. Data Sources**
+- **Citi Bike NYC API:** Real-time station data endpoints
+- **Station Information API:** Static station metadata (location, capacity)
+- **Station Status API:** Dynamic status (available bikes, docks)
+
+#### **2. Data Ingestion Layer**
+- **Python Ingestion Script:** Fetches data every 30 seconds
+- **JSON Processing:** Transforms API responses into event format
+- **Event Batching:** Groups multiple stations into efficient batches
+- **Error Handling:** Retry logic for transient failures
+
+#### **3. Streaming Platform (Azure Event Hub)**
+- **Event Hub Partitions:** Enables parallel processing and high throughput
+- **Consumer Groups:** Allows multiple consumers to read independently
+- **Message Routing:** Distributes events across partitions
+- **Scalability:** Handles thousands of events per second
+
+#### **4. Visualization Layer**
+- **Streamlit Dashboard:** Web-based real-time interface
+- **Real-time Charts:** Live updates of station availability
+- **Interactive Maps:** Geographic visualization of stations
+- **Auto-refresh:** Updates every 5 seconds automatically
+
+#### **5. Monitoring & Analytics**
+- **Azure Metrics:** Tracks incoming/outgoing messages and bytes
+- **Error Tracking:** Monitors failed requests and server errors
+- **Performance Analytics:** Throughput and latency monitoring
+
+### **Data Flow:**
+
+```
+Citi Bike NYC API → Python Script → Azure Event Hub → Streamlit Dashboard
+     ↓                    ↓              ↓                    ↓
+Station Data      →   JSON Events  →  Partitions    →  Real-time Viz
+     ↓                    ↓              ↓                    ↓
+30s intervals     →   Batch Send   →  Consumer Groups →  Auto-refresh
+```
+
+### **Technical Specifications:**
+
+- **Latency:** < 1 second for visualization
+- **Throughput:** Supports thousands of events per second
+- **Scalability:** Event Hub partitions for horizontal scaling
+- **Reliability:** Retry logic and comprehensive error handling
+- **Security:** Environment variables for credential management
+- **Data Format:** JSON with station metadata and status
 
 ---
 
