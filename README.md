@@ -1,1 +1,118 @@
-# real-time-data-processing
+# Citi Bike NYC Real-Time Data Pipeline & Dashboard
+
+## Architecture
+
+```mermaid
+graph TD
+    A[Citi Bike NYC API] --> B[Python Ingestion Script]
+    B --> C[Azure Event Hub]
+    C --> D[Streamlit Dashboard]
+    C --> E[Other Consumers (optional)]
+    C --> F[Azure Monitoring & Metrics]
+```
+
+- **Citi Bike NYC API:** Provides real-time station data.
+- **Python Ingestion Script:** Fetches and sends data to Azure Event Hub.
+- **Azure Event Hub:** Scalable, partitioned event streaming platform.
+- **Streamlit Dashboard:** Visualizes live data for real-time monitoring.
+- **Azure Monitoring:** Tracks system health and throughput.
+
+---
+
+## 1. Overview
+
+This project implements a real-time data ingestion and visualization pipeline for Citi Bike NYC station data. It continuously ingests live station information and status, streams the data through Azure Event Hub, and visualizes it in real time using a custom Streamlit dashboard. The solution enables instant monitoring and analysis of bike station availability and operational KPIs.
+
+- **Ingestion:** Collects Citi Bike NYC station data in real time.
+- **Streaming:** Uses Azure Event Hub to distribute messages efficiently.
+- **Visualization:** Displays live data and analytics via a Streamlit dashboard.
+
+---
+
+## 2. Developer Information
+
+- **Author:** Alexsander Silveira
+- **Role:** Project creator and main developer
+
+---
+
+## 3. Benefits for the Business
+
+- **Real-time monitoring:** Enables instant visibility into operational KPIs.
+- **Faster decision-making:** Supports agile responses to events and anomalies.
+- **Reduced downtime:** Early detection of issues helps minimize service interruptions.
+- **Improved customer experience:** Ensures better resource allocation and station availability.
+- **Enhanced resource allocation:** Data-driven insights for optimal bike and dock distribution.
+
+---
+
+## 4. Return on Investment (ROI)
+
+- **Agile operations:** Real-time visibility allows for immediate action, reducing delays.
+- **Lower operational costs:** Early detection and response reduce manual interventions and downtime.
+- **Higher user satisfaction:** Customers benefit from more reliable and available services.
+
+---
+
+## 5. Technical Stack
+
+- **Azure Event Hub:** Scalable, partitioned event streaming platform for ingesting and distributing messages.
+- **Python:** Used for data ingestion, processing, and dashboard backend.
+- **Streamlit:** Interactive, real-time dashboard for data visualization.
+- **JSON:** Standard format for message payloads.
+- **Event Hub Partitions:** Used to scale throughput and parallelize message processing.
+- **Message Structure:** Each message is a JSON object representing a bike station’s status and metadata.
+
+---
+
+## 6. Complexity and Challenges
+
+- **Message Handling:** Ensuring reliable delivery, deduplication, and ordering.
+- **Scaling Partitions:** Balancing throughput and consumer parallelism.
+- **Fast Data Visualization:** Keeping the dashboard responsive with high-frequency updates.
+- **Volume Management:** 
+  - Use batch writes to Event Hub when possible.
+  - Implement buffering and retry logic for transient failures.
+  - Monitor and tune partition count for optimal performance.
+
+---
+
+## 7. When and Why to Use Streaming
+
+- **Use Cases:**
+  - Vehicle and asset tracking
+  - Delivery and logistics updates
+  - IoT sensor data
+  - Financial transactions
+  - Any scenario where near real-time decision-making is critical
+
+- **Why Streaming?**
+  - Use streaming when the freshness of data directly impacts business value, such as in operations, customer experience, or risk management.
+
+---
+
+## 8. Metrics and Monitoring
+
+- **Azure Metrics Used:**
+  - **Incoming/Outgoing Messages:** Track message flow and detect bottlenecks.
+  - **Incoming/Outgoing Bytes:** Monitor data volume and throughput.
+  - **Successful vs Failed Requests:** Ensure reliability and identify issues.
+  - **Server Errors & Throttled Requests:** Detect and respond to system health problems.
+
+- **How Metrics Are Used:**
+  - To ensure system health, optimize throughput, and proactively address issues before they impact users.
+
+---
+
+## 9. Screenshots (Recommended)
+
+- Add screenshots of:
+  - Terminal logs showing event ingestion and processing
+  - The Streamlit dashboard with live data
+  - Azure Event Hub metrics and charts
+  - Any error or alert visualizations
+
+---
+
+> **Developed by Alexsander Silveira**  
+> For questions or contributions, please open an issue or pull request on GitHub. 
