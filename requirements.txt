@@ -1,3 +1,6 @@
 streamlit
 pandas
-azure-eventhub 
+azure-eventhub
+python-dotenv
+requests
+streamlit-autorefresh 

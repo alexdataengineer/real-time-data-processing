@@ -1,15 +1,20 @@
 import requests
 import time
 import json
+import os
+from dotenv import load_dotenv
 from azure.eventhub import EventHubProducerClient, EventData
 
+# Carregar variáveis de ambiente
+load_dotenv()
+
 # Configurações do Event Hub
-CONNECTION_STR = "REMOVED"
-EVENTHUB_NAME = "REMOVED "
+CONNECTION_STR = os.getenv("EVENT_HUB_CONNECTION_STRING")
+EVENTHUB_NAME = os.getenv("EVENT_HUB_NAME")
 
 # URLs das APIs do Citi Bike
 STATION_INFO_URL = "https://gbfs.citibikenyc.com/gbfs/en/station_information.json"
-STATION_STATUS_URL = "https://gbfs.citibikenyc.com/gbfs/en/station_status.json"
+STATION_STATUS_URL = os.getenv("CITIBIKE_API_URL", "https://gbfs.citibikenyc.com/gbfs/en/station_status.json")
 
 # Frequência de envio (em segundos)
 INTERVAL = 30

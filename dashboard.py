@@ -5,12 +5,15 @@ from azure.eventhub import EventHubConsumerClient
 import threading
 from streamlit_autorefresh import st_autorefresh
 import os
+from dotenv import load_dotenv
+
+# Carregar variáveis de ambiente
+load_dotenv()
 
 # Event Hub settings
-# IMPORTANT: Replace the placeholder below with your actual Azure Event Hub connection string
-CONNECTION_STR = "<YOUR_EVENT_HUB_CONNECTION_STRING>"  # Example: 'Endpoint=sb://...;SharedAccessKeyName=...;SharedAccessKey=...;EntityPath=REMOVED '
-EVENTHUB_NAME = "REMOVED "
-CONSUMER_GROUP = "$Default"  # Using the default consumer group
+CONNECTION_STR = os.getenv("EVENT_HUB_CONNECTION_STRING")
+EVENTHUB_NAME = os.getenv("EVENT_HUB_NAME")
+CONSUMER_GROUP = os.getenv("CONSUMER_GROUP", "$Default")  # Using the default consumer group
 
 # Global buffer for received data
 data_buffer = []

@@ -1,7 +1,12 @@
+import os
+from dotenv import load_dotenv
 from azure.eventhub import EventHubProducerClient, EventData
 
-CONNECTION_STR = "REMOVED"
-EVENTHUB_NAME = "REMOVED "
+# Carregar variáveis de ambiente
+load_dotenv()
+
+CONNECTION_STR = os.getenv("EVENT_HUB_CONNECTION_STRING")
+EVENTHUB_NAME = os.getenv("EVENT_HUB_NAME")
 
 def main():
     producer = EventHubProducerClient.from_connection_string(conn_str=CONNECTION_STR, eventhub_name=EVENTHUB_NAME)
