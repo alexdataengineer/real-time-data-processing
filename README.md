@@ -30,6 +30,8 @@
 - **Azure Metrics:** Tracks incoming/outgoing messages and bytes
 - **Error Tracking:** Monitors failed requests and server errors
 - **Performance Analytics:** Throughput and latency monitoring
+- 
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/75baacf3-4ccf-461a-b5d5-c8efa60d85c2" />
 
 ### **Data Flow:**
 
