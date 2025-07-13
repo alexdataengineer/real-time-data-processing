@@ -1,51 +1,5 @@
 # Citi Bike NYC Real-Time Data Pipeline & Dashboard
 
-## Quick Start
-
-1. **Install dependencies:**
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-2. **Set up environment variables:**
-   ```bash
-   cp env.example .env
-   ```
-   Then edit `.env` with your Azure Event Hub credentials:
-   ```
-   EVENT_HUB_CONNECTION_STRING=your_connection_string_here
-   EVENT_HUB_NAME=your_event_hub_name
-   CONSUMER_GROUP=your_consumer_group
-   ```
-
-3. **Run the ingestion script:**
-   ```bash
-   python citibike_ingest/ingest_citibike_to_eventhub.py
-   ```
-
-4. **Start the dashboard:**
-   ```bash
-   streamlit run dashboard.py
-   ```
-
-## Architecture
-
-```mermaid
-graph TD
-    A[Citi Bike NYC API] --> B[Python Ingestion Script]
-    B --> C[Azure Event Hub]
-    C --> D[Streamlit Dashboard]
-    C --> E[Other Consumers (optional)]
-    C --> F[Azure Monitoring & Metrics]
-```
-
-- **Citi Bike NYC API:** Provides real-time station data.
-- **Python Ingestion Script:** Fetches and sends data to Azure Event Hub.
-- **Azure Event Hub:** Scalable, partitioned event streaming platform.
-- **Streamlit Dashboard:** Visualizes live data for real-time monitoring.
-- **Azure Monitoring:** Tracks system health and throughput.
-
----
 
 ## 1. Overview
 
