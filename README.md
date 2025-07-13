@@ -91,7 +91,6 @@ This project implements a real-time data ingestion and visualization pipeline fo
 - **Enhanced resource allocation:** Data-driven insights for optimal bike and dock distribution.
 
 ---
-<img width="2048" height="1037" alt="image" src="https://github.com/user-attachments/assets/34429072-d8c0-4a15-be1f-624b3e7c51b2" />
 <img width="2048" height="938" alt="image" src="https://github.com/user-attachments/assets/c82690e7-4786-46ee-918c-0b108cbc4693" />
 <img width="2048" height="678" alt="image" src="https://github.com/user-attachments/assets/e44c00f4-bfd2-45f8-a485-90c587682774" />
 <img width="2048" height="881" alt="image" src="https://github.com/user-attachments/assets/2f49618a-a589-444c-88b5-2bbc44c04d25" />
