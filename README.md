@@ -40,6 +40,14 @@ Station Data      →   JSON Events  →  Partitions    →  Real-time Viz
      ↓                    ↓              ↓                    ↓
 30s intervals     →   Batch Send   →  Consumer Groups →  Auto-refresh
 ```
+Metric	Current Value
+Incoming Requests	57.35k
+Successful Requests	49.17k
+Incoming Messages	13.42k
+Outgoing Messages	43.03k
+Incoming Bytes	12.16 MB
+Outgoing Bytes	40.96 MB
+Server Errors / Throttling	0
 
 ### **Technical Specifications:**
 
@@ -51,6 +59,7 @@ Station Data      →   JSON Events  →  Partitions    →  Real-time Viz
 - **Data Format:** JSON with station metadata and status
 
 ---
+<img width="2048" height="873" alt="image" src="https://github.com/user-attachments/assets/f5460afd-9f06-44c7-b7f4-f805f5f37c85" />
 
 
 ## 1. Overview
@@ -62,6 +71,7 @@ This project implements a real-time data ingestion and visualization pipeline fo
 - **Visualization:** Displays live data and analytics via a Streamlit dashboard.
 
 ---
+<img width="1984" height="1348" alt="image" src="https://github.com/user-attachments/assets/af1506d8-550c-4a97-a69f-a9fa46632f66" />
 
 ## 2. Developer Information
 
@@ -79,6 +89,10 @@ This project implements a real-time data ingestion and visualization pipeline fo
 - **Enhanced resource allocation:** Data-driven insights for optimal bike and dock distribution.
 
 ---
+<img width="2048" height="1037" alt="image" src="https://github.com/user-attachments/assets/34429072-d8c0-4a15-be1f-624b3e7c51b2" />
+<img width="2048" height="938" alt="image" src="https://github.com/user-attachments/assets/c82690e7-4786-46ee-918c-0b108cbc4693" />
+<img width="2048" height="678" alt="image" src="https://github.com/user-attachments/assets/e44c00f4-bfd2-45f8-a485-90c587682774" />
+<img width="2048" height="881" alt="image" src="https://github.com/user-attachments/assets/2f49618a-a589-444c-88b5-2bbc44c04d25" />
 
 ## 4. Return on Investment (ROI)
 
